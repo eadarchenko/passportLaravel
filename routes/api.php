@@ -18,9 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::get('/', 'HomeController@index')->name('home.index');
-
 Route::group(['middleware' => ['guest']], function() {
 
     Route::post('/register', 'RegisterController@register')->name('register.perform');
